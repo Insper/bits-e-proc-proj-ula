@@ -65,7 +65,7 @@ def barrelShifter(a, dir, size, q):
     se dir for 0, shifta para direita `size`
     se dir for 1, shifta para esquerda `size`
 
-    exemplo: a = 0000 1111 0101 1010, dir = 0, size = 3
+    exemplo: a = 0000 1111 0101 1010, dir = 1, size = 3
              q = 0111 1010 1101 0000
     """
     foo = Signal(intbv(0))
@@ -214,7 +214,7 @@ def bin2bcd(b, bcd1, bcd0):
 
     Exemplo:
     bin  = `01010010`
-    BCD1 = 8
+    BCD1 = 5
     BCD0 = 2
     """
 
