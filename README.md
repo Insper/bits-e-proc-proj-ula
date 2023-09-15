@@ -1,4 +1,4 @@
-# Projeto 1 - Combinacional
+# Projeto Bits
 
 - Nome do grupo
 
