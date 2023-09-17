@@ -25,10 +25,10 @@ randrange = random.randrange
 
 @pytest.mark.telemetry_files(source("ula.py"))
 def test_ula():
-    x = Signal(intbv(1)[16:])
-    y = Signal(intbv(2)[16:])
-    saida = Signal(intbv(0)[16:])
-    control = Signal(intbv(0))
+    x = Signal(modbv(1)[16:])
+    y = Signal(modbv(2)[16:])
+    saida = Signal(modbv(0)[16:])
+    control = Signal(modbv(0))
     zr = Signal(bool(0))
     ng = Signal(bool(0))
     ula_1 = ula(x, y, control, zr, ng, saida)
@@ -83,14 +83,15 @@ def test_ula():
         assert zr == 0 and ng == 0
 
     sim = Simulation(ula_1, stimulus)
+    traceSignals(ula_1)
     sim.run()
 
 
 @pytest.mark.telemetry_files(source("ula.py"))
 def test_zerador():
     z = Signal(bool(0))
-    a = Signal(intbv(0))
-    y = Signal(intbv(0))
+    a = Signal(modbv(0))
+    y = Signal(modbv(0))
     zerador_1 = zerador(z, a, y)
 
     @instance
@@ -109,7 +110,7 @@ def test_zerador():
 
 @pytest.mark.telemetry_files(source("ula.py"))
 def test_comparador():
-    a = Signal(intbv(0))
+    a = Signal(modbv(0))
     ng = Signal(bool(0))
     zr = Signal(bool(0))
     comparador_1 = comparador(a, zr, ng, 16)
@@ -133,8 +134,8 @@ def test_comparador():
 @pytest.mark.telemetry_files(source("ula.py"))
 def test_inversor():
     z = Signal(bool(0))
-    a = Signal(intbv(0))
-    y = Signal(intbv(0))
+    a = Signal(modbv(0))
+    y = Signal(modbv(0))
 
     inversor_1 = inversor(z, a, y)
 
@@ -155,8 +156,8 @@ def test_inversor():
 
 @pytest.mark.telemetry_files(source("ula.py"))
 def test_inc():
-    a = Signal(intbv(0))
-    q = Signal(intbv(0))
+    a = Signal(modbv(0))
+    q = Signal(modbv(0))
 
     inc16_1 = inc(a, q)
 
@@ -173,9 +174,9 @@ def test_inc():
 
 @pytest.mark.telemetry_files(source("ula.py"))
 def test_add():
-    a = Signal(intbv(0))
-    b = Signal(intbv(0))
-    q = Signal(intbv(0))
+    a = Signal(modbv(0))
+    b = Signal(modbv(0))
+    q = Signal(modbv(0))
 
     add16_1 = add(a, b, q)
 
