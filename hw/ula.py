@@ -6,14 +6,14 @@ from .components import *
 
 @block
 def ula(x, y, c, zr, ng, saida, width=16):
-    zx_out = Signal(intbv(0)[width:])
-    nx_out = Signal(intbv(0)[width:])
-    zy_out = Signal(intbv(0)[width:])
-    ny_out = Signal(intbv(0)[width:])
-    and_out = Signal(intbv(0)[width:])
-    add_out = Signal(intbv(0)[width:])
-    mux_out = Signal(intbv(0)[width:])
-    no_out = Signal(intbv(0)[width:])
+    zx_out = Signal(modbv(0)[width:])
+    nx_out = Signal(modbv(0)[width:])
+    zy_out = Signal(modbv(0)[width:])
+    ny_out = Signal(modbv(0)[width:])
+    and_out = Signal(modbv(0)[width:])
+    add_out = Signal(modbv(0)[width:])
+    mux_out = Signal(modbv(0)[width:])
+    no_out = Signal(modbv(0)[width:])
 
     c_zx = c(5)
     c_nx = c(4)
