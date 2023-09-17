@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
 from myhdl import *
+from .components import *
 
 
 @block
 def ula(x, y, c, zr, ng, saida, width=16):
-
     zx_out = Signal(intbv(0)[width:])
     nx_out = Signal(intbv(0)[width:])
     zy_out = Signal(intbv(0)[width:])
