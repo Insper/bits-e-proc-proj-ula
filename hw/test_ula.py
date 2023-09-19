@@ -119,13 +119,13 @@ def test_comparador():
     def stimulus():
         a.next = 0
         yield delay(10)
-        assert ng == 0 or zr == 1
+        assert ng == 0 and zr == 1
         a.next = 0xFFFF
         yield delay(10)
-        assert ng == 1 or zr == 0
+        assert ng == 1 and zr == 0
         a.next = 32
         yield delay(10)
-        assert ng == 0 or zr == 0
+        assert ng == 0 and zr == 0
 
     sim = Simulation(comparador_1, stimulus)
     sim.run()
